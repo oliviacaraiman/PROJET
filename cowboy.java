@@ -1,0 +1,56 @@
+public class Cowboy {
+
+// Personne Attributs
+    private String pseudo;
+    private Arme arme1, arme2, arme3;
+    private int vie;
+    private int energie; 
+    
+    // constructeurs
+    public Personne(String pseu, int a1, int a2, int a3) {
+        pseudo = pseu;
+        vie = 100;
+        energie = 100;
+        a1= this.a1;
+        a2= this.a2;
+        a3= this.a3;
+        }
+        
+        
+        // accesseurs
+        public String getPseudo() {
+            return pseudo;
+        }
+        
+        public void setArme1(int a1) {
+           n = a1;
+           Arme arme1;
+           switch (n) {
+            case 1:  arme1 = Arme ();
+                     break;
+           
+           
+            default: monthString = "Invalid month";
+                     break; 
+           
+        }
+        
+        public String toString() {
+            return "je suis " + pseudo + "et jqi" + anNais;
+        }  
+        
+ 
+            
+          
+}
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
