@@ -1,6 +1,6 @@
 public class Cowboy {
 
-// Personne Attributs
+// cowboy Attributs
     private String pseudo;
     private Arme arme1, arme2, arme3;
     private int vie;
