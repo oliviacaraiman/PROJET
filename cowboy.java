@@ -33,15 +33,7 @@ public class Cowboy {
             default: monthString = "Invalid month";
                      break; 
            
-        }
-        
-        public String toString() {
-            return "je suis " + pseudo + "et jqi" + anNais;
-        }  
-        
- 
-            
-          
+           }
 }
             
         
