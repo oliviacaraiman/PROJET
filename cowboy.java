@@ -34,7 +34,6 @@ public class Cowboy {
 			arme3 = Arme(a3); 
         }   
         
-        fekwnfewui
           
 }
             
