@@ -7,7 +7,7 @@ public class Cowboy {
     private int energie; 
     
     // constructeurs
-    public Personne(String pseu, int a1, int a2, int a3) {
+    public Cowboy(String pseu, int a1, int a2, int a3) {
         pseudo = pseu;
         vie = 100;
         energie = 100;
