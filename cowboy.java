@@ -23,17 +23,17 @@ public class Cowboy {
         }
         
         public void setArme1(int a1) {
-           n = a1;
-           Arme arme1;
-           switch (n) {
-            case 1:  arme1 = Arme ();
-                     break;
-           
-           
-            default: monthString = "Invalid month";
-                     break; 
-           
-           }
+			arme1 = Arme(a1); 
+        }
+        
+        public void setArme2(int a2) {
+			arme2 = Arme(a2); 
+        }
+        
+        public void setArme3(int a3) {
+			arme3 = Arme(a3); 
+        }         
+          
 }
             
         
