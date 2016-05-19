@@ -32,7 +32,9 @@ public class Cowboy {
         
         public void setArme3(int a3) {
 			arme3 = Arme(a3); 
-        }         
+        }   
+        
+        fekwnfewui
           
 }
             
