@@ -1,12 +1,12 @@
 public class Cowboy {
 
-// cowboy Attributs
+    // Attributs
     private String pseudo;
     private Arme arme1, arme2, arme3;
     private int vie;
     private int energie; 
     
-    // constructeurs
+    // Constructeur
     public Cowboy(String pseu, int a1, int a2, int a3) {
         pseudo = pseu;
         vie = 100;
@@ -17,7 +17,7 @@ public class Cowboy {
         }
         
         
-        // accesseurs
+        // Accesseurs
         public String getPseudo() {
             return pseudo;
         }
