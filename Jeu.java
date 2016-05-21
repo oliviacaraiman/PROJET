@@ -7,24 +7,24 @@ public class Jeu {
         java.util.Scanner clavier = new java.util.Scanner(System.in);
         
         // Creation des armes
-		Arme pierre = new Arme(1, "Pierre", 5);
-		Arme bouteille = new Arme(2, "Bouteille", 10);
-		Arme baton = new Arme(3, "Baton", 15);
-		Arme couteau = new Arme(4, "Couteau", 20);
-		Arme revolver = new Arme(5, "Revolver", 40);
-		Arme fusile = new Arme(6, "Fusile", 50);
-		Arme grenade = new Arme(7, "Grenade", 70);
+		Arme a1 = new Arme(1, "Pierre", 5);
+		Arme a2 = new Arme(2, "Bouteille", 10);
+		Arme a3 = new Arme(3, "Baton", 15);
+		Arme a4 = new Arme(4, "Couteau", 20);
+		Arme a5 = new Arme(5, "Revolver", 40);
+		Arme a6 = new Arme(6, "Fusile", 50);
+		Arme a7 = new Arme(7, "Grenade", 70);
         
         // Presentation des armes
         System.out.println("Voici la liste des armes disponibles:");
         System.out.println();
-        System.out.println(pierre);
-		System.out.println(bouteille);
-		System.out.println(baton);
-		System.out.println(couteau);
-		System.out.println(revolver);
-		System.out.println(fusile);
-		System.out.println(grenade);
+        System.out.println(a1);
+		System.out.println(a2);
+		System.out.println(a3);
+		System.out.println(a4);
+		System.out.println(a5);
+		System.out.println(a6);
+		System.out.println(a7);
 		System.out.println();
         
         // Nom et armes pour Joueur 1
@@ -60,7 +60,11 @@ public class Jeu {
         // Creation de 2 joueurs avec nom et armes    
         Cowboy j1 = new Cowboy(nom1, armeJoueur1[0], armeJoueur1[1], armeJoueur1[2]);
         Cowboy j2 = new Cowboy(nom2, armeJoueur2[0], armeJoueur2[1], armeJoueur2[2]);
-    
+        
+		System.out.println();
+		System.out.println("                              <<<LA BATAILLE DU SIECLE>>>");
+		System.out.print(j1);System.out.print("    <----CONTRE---->    ");System.out.println(j2);
+		
 		
 	}
 }
