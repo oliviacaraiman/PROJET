@@ -16,6 +16,8 @@ public class Jeu {
 		Arme grenade = new Arme(7, "Grenade", 70);
         
         // Presentation des armes
+        System.out.println("Voici la liste des armes disponibles:");
+        System.out.println();
         System.out.println(pierre);
 		System.out.println(bouteille);
 		System.out.println(baton);
