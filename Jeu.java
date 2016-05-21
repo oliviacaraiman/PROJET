@@ -1,4 +1,4 @@
-public class Jeu {
+public class Jeu{
 	
 	public static void main (String args[]) {
 		
@@ -7,24 +7,24 @@ public class Jeu {
         java.util.Scanner clavier = new java.util.Scanner(System.in);
         
         // Creation des armes
-		Arme a1 = new Arme(1, "Pierre", 5);
-		Arme a2 = new Arme(2, "Bouteille", 10);
-		Arme a3 = new Arme(3, "Baton", 15);
-		Arme a4 = new Arme(4, "Couteau", 20);
-		Arme a5 = new Arme(5, "Revolver", 40);
-		Arme a6 = new Arme(6, "Fusile", 50);
-		Arme a7 = new Arme(7, "Grenade", 70);
+		Arme a1 = new Arme(1);
+		Arme a2 = new Arme(2);
+		Arme a3 = new Arme(3);
+		Arme a4 = new Arme(4);
+		Arme a5 = new Arme(5);
+		Arme a6 = new Arme(6);
+		Arme a7 = new Arme(7);
         
         // Presentation des armes
         System.out.println("Voici la liste des armes disponibles:");
         System.out.println();
-        System.out.println(a1);
-		System.out.println(a2);
-		System.out.println(a3);
-		System.out.println(a4);
-		System.out.println(a5);
-		System.out.println(a6);
-		System.out.println(a7);
+        System.out.println(a1.toString());
+		System.out.println(a2.toString());
+		System.out.println(a3.toString());
+		System.out.println(a4.toString());
+		System.out.println(a5.toString());
+		System.out.println(a6.toString());
+		System.out.println(a7.toString());
 		System.out.println();
         
         // Nom et armes pour Joueur 1
