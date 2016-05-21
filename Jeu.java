@@ -13,7 +13,7 @@ public class Jeu {
         for (int i=1; i<=3; i++) {
                 System.out.print("Arme " + i + " pour Joueur 1 : ");
                 String str = clavier.nextLine();
-                armeJoueur1[i] = Integer.parseInt(str); 
+                armeJoueur1[i-1] = Integer.parseInt(str); 
             }
         
         // Nom et armes pour Joueur 2    
@@ -22,10 +22,8 @@ public class Jeu {
         for (int i=1; i<=3; i++) {
                 System.out.print("Arme " + i + " pour Joueur 2 : ");
                 String str = clavier.nextLine();
-                armeJoueur2[i] = Integer.parseInt(str); 
+                armeJoueur2[i-1] = Integer.parseInt(str); 
             }
-            
-        
 	}
 }
 
