@@ -1,40 +1,53 @@
 public class Cowboy {
 
     // Attributs
-    private String pseudo;
+    private String nom;
+    private int a1, a2, a3;
     private Arme arme1, arme2, arme3;
     private int vie;
     private int energie; 
     
     // Constructeur
-    public Cowboy(String pseu, int a1, int a2, int a3) {
-        pseudo = pseu;
-        vie = 100;
-        energie = 100;
-        a1= this.a1;
-        a2= this.a2;
-        a3= this.a3;
+    public Cowboy(String nom, int a1, int a2, int a3) {
+        this.nom = nom;
+        this.vie = 100;
+        this.energie = 100;
+        this.a1= a1;
+        this.a2= a2;
+        this.a3= a3;
         }
         
+	// Accesseurs
+	public String getNom() {
+		return this.nom;
+	}
+	
+	public int getVie() {
+		return this.vie;
+	}
+	
+	public int getEnergie() {
+		return this.energie;
+	}
+	
+	public int getArme1() {
+		return this.a1;
+	}
+	
+	public int getArme2() {
+		return this.a2;
+	}
+	
+	public int getArme3() {
+		return this.a3;
+	}
+			
+	public String toString() {
+        String res = "Ce cowboy s'appelle "+ getNom() + " et il a choisi comme arme: ";
         
-        // Accesseurs
-        public String getPseudo() {
-            return pseudo;
-        }
-        
-        public void setArme1(int a1) {
-			arme1 = Arme(a1); 
-        }
-        
-        public void setArme2(int a2) {
-			arme2 = Arme(a2); 
-        }
-        
-        public void setArme3(int a3) {
-			arme3 = Arme(a3); 
-        }   
-        
-          
+        return res;            
+    }
+			  
 }
             
         
