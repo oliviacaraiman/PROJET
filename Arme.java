@@ -19,7 +19,7 @@ public class Arme {
         	this.coutAttaque = 10;
         }
         else if(n == 3) {
-        	this.nom = "Baton";
+        	this.nom = "Lasso";
         	this.coutAttaque = 15;
         }
         else if(n == 4) {
@@ -35,7 +35,7 @@ public class Arme {
         	this.coutAttaque = 50;
         }
         else if (n == 7) {
-        	this.nom = "Grenade";
+        	this.nom = "Dynamite";
         	this.coutAttaque = 70;
         }
     }
