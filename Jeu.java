@@ -6,6 +6,11 @@ public class Jeu{
         int[] armeJoueur2 = new int[3];  								// Tableau d'armes en integer pour Joueur 2
         java.util.Scanner clavier = new java.util.Scanner(System.in);
         
+        System.out.println( " Once upon a time in the Far West...");
+        System.out.println(" - Je ne m'attendais pas à te revoir ici... ");
+        System.out.println(" - Après tant de temps...");
+        System.out.println(" - Qu'est ce que tu veux? ");
+        System.out.println(" ");
         // Creation des armes
 		Arme a1 = new Arme(1);
 		Arme a2 = new Arme(2);
