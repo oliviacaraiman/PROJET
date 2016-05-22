@@ -77,11 +77,11 @@ public class Cowboy {
 
 	public void defense(int id_arme, int n) {
 		if (id_arme == a1) {
-			this.vie = vie - (arme1.getCoutAttaque() - n);
+			this.vie = this.vie - (arme1.getCoutAttaque() - n);
 		} else if (id_arme == a2) {
-			this.vie = vie - (arme2.getCoutAttaque() - n);
+			this.vie = this.vie - (arme2.getCoutAttaque() - n);
 		} else if (id_arme == a3) {
-			this.vie = vie - (arme3.getCoutAttaque() - n);
+			this.vie = this.vie - (arme3.getCoutAttaque() - n);
 		}
 	}
 
@@ -94,7 +94,7 @@ public class Cowboy {
 			if (nb_defense == 0) {
 				utiliseArme(id_arme);
 			} else {
-			defense(id_arme, nb_defense);
+				defense(id_arme, nb_defense);
 			}
 		}
 	}
@@ -108,13 +108,3 @@ public class Cowboy {
 	}
 
 }
-
-        
-              
-        
-        
-        
-        
-        
-        
-    
