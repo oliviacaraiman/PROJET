@@ -101,7 +101,22 @@ public class Jeu{
 		System.out.println();
 		System.out.println("                              <<<LA BATAILLE DU SIECLE>>>");
 		System.out.print(j1);System.out.print("    <----CONTRE---->    ");System.out.println(j2);
+
+	// Debut du jeu
+
+		System.out.println(nom1 + ", ecrivez le code de l'arme que vous voulez utiliser:");
+		String s = clavier.nextLine();
+		System.out.println(nom2 + "nb points pour se defendre:");
+		String str = clavier.nextLine();
+		int nb_defense = Integer.parseInt(str);
 		
+		for (int i=0; i<3; i++){
+			j1.decryptCodeArme(s, combJoueur1[i], armeJoueur1[i], 0);
+			j2.decryptCodeArme(s, combJoueur1[i], armeJoueur1[i], nb_defense);
+		}
+		
+		System.out.println(nom1 + "  energie: " + j1.getEnergie() + "  vie: " + j1.getVie());
+		System.out.println(nom2 + "  energie: " + j2.getEnergie() + "  vie: " + j2.getVie());
 		
 	}
 }
