@@ -62,8 +62,24 @@ public class Cowboy {
 					+ this.getArme2().getNomArme() + ", "+this.getArme3().getNomArme()+")";
         
         return res;            
-    }
-			  
+        }
+        
+        public void utiliseArme(Arme a){
+        	this.energie = energie - a.getCoutAttaque();
+        }
+	
+	public void defense(Arme a, int n){
+		this.vie = vie - ( a.getCoutAttaque() - n);
+	}
+	
+	public boolean estMort(){
+		boolean m = false;
+		if( this.vie == 0){
+			m = true;
+		}
+		return m;
+	}
+	
 }
             
         
