@@ -62,6 +62,15 @@ public class Jeu{
         
         System.out.println();
         
+        // Touches pour le premier joueur
+		String[] combJoueur1 = new String[3];
+		for (int i = 0; i < 3; i++){
+			System.out.println(nom1 + ", ecrivez la combinaison de touches pour votre " + (i+1) +" arme");
+			combJoueur1[i]  = clavier.nextLine();
+		}
+	
+	System.out.println();
+        
         
         // Nom et armes pour Joueur 2    
         System.out.print("Nom de Joueur 2: ");
@@ -77,6 +86,14 @@ public class Jeu{
             armeJoueur2[i-1] = n; 
         }
         
+        System.out.println();
+        //Touches pour le 2 joueur
+		String[] combJoueur2 = new String[3];
+		for (int i = 0; i < 3; i++){
+			System.out.println(nom2 + ", ecrivez la combinaison de touches pour votre " + (i+1) +" arme");
+			combJoueur2[i]  = clavier.nextLine();
+		}
+		
         // Creation de 2 joueurs avec nom et armes    
         Cowboy j1 = new Cowboy(nom1, armeJoueur1[0], armeJoueur1[1], armeJoueur1[2]);
         Cowboy j2 = new Cowboy(nom2, armeJoueur2[0], armeJoueur2[1], armeJoueur2[2]);
