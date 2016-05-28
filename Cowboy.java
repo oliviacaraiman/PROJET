@@ -121,12 +121,12 @@ public class Cowboy {
 
 	public void decryptCodeArme(String code_entre, String code_arme, int id_arme, int nb_defense) {
 		if (codeArme(code_entre, code_arme)) {
-			if (nb_defense == 0) {
+			if (nb_defense < 0) {
 				utiliseArme(id_arme);
 			} else {
 				defense(id_arme, nb_defense);
 			}
-		}
+		} 
 	}
 
 	public boolean estMort() {
