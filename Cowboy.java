@@ -101,6 +101,7 @@ public class Cowboy {
 		return b;
 	}
 	
+		
 	
 	public boolean codeArme(String code_entre, String code_arme) {
 		return (code_entre.equals(code_arme));
