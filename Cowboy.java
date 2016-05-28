@@ -1,3 +1,4 @@
+
 public class Cowboy {
 
 	// Attributs
@@ -77,12 +78,20 @@ public class Cowboy {
 
 	public void defense(int id_arme, int n) {
 		if (id_arme == a1) {
-			this.vie = this.vie - (arme1.getCoutAttaque() - n);
+			if( arme1.getCotAttaque()- n >= 0 ){
+				this.vie = this.vie - (arme1.getCoutAttaque() - n);
+			}
 		} else if (id_arme == a2) {
-			this.vie = this.vie - (arme2.getCoutAttaque() - n);
+			if( arme1.getCotAttaque()- n >= 0 ){
+				this.vie = this.vie - (arme2.getCoutAttaque() - n);
+			}
 		} else if (id_arme == a3) {
-			this.vie = this.vie - (arme3.getCoutAttaque() - n);
+			if( arme1.getCotAttaque()- n >= 0 ){
+				this.vie = this.vie - (arme3.getCoutAttaque() - n);
+			}
 		}
+		if( this.energie 
+		this.energie = this.energie - n;
 	}
 
 	public boolean codeArme(String code_entre, String code_arme) {
@@ -108,3 +117,4 @@ public class Cowboy {
 	}
 
 }
+
