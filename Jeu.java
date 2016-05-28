@@ -101,7 +101,7 @@ public class Jeu{
         Cowboy j2 = new Cowboy(nom2, armeJoueur2[0], armeJoueur2[1], armeJoueur2[2]);
         
 		System.out.println();
-		System.out.println("                              <<<LA BATAILLE DU SIECLE>>>");
+		System.out.println("                              <<<LE DUEL DU SIECLE>>>");
 		System.out.print(j1);System.out.print("    <----CONTRE---->    ");System.out.println(j2);
 		
 		
