@@ -90,10 +90,18 @@ public class Cowboy {
 				this.vie = this.vie - (arme3.getCoutAttaque() - n);
 			}
 		}
-		if( this.energie 
-		this.energie = this.energie - n;
 	}
-
+	
+	// Verifie que le joueur a suffisament d'energie pour se defendre
+	public boolean EnergieSuffisante(int n) {
+		boolean b = true;
+		if( this.energie < n) {
+			b = false;
+		}
+		return b;
+	}
+	
+	
 	public boolean codeArme(String code_entre, String code_arme) {
 		return (code_entre.equals(code_arme));
 	}
