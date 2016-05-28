@@ -82,11 +82,11 @@ public class Cowboy {
 				this.vie = this.vie - (arme1.getCoutAttaque() - n);
 			}
 		} else if (id_arme == a2) {
-			if( arme1.getCotAttaque()- n >= 0 ){
+			if( arme2.getCotAttaque()- n >= 0 ){
 				this.vie = this.vie - (arme2.getCoutAttaque() - n);
 			}
 		} else if (id_arme == a3) {
-			if( arme1.getCotAttaque()- n >= 0 ){
+			if( arme3.getCotAttaque()- n >= 0 ){
 				this.vie = this.vie - (arme3.getCoutAttaque() - n);
 			}
 		}
