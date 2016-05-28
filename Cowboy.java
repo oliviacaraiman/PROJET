@@ -68,31 +68,44 @@ public class Cowboy {
 
 	public void utiliseArme(int id_arme) {
 		if (id_arme == a1) {
-			this.energie = this.energie - arme1.getCoutAttaque();
+			changeEnergie(arme1.getCoutAttaque());
+			//this.energie = this.energie - arme1.getCoutAttaque();
 		} else if (id_arme == a2) {
-			this.energie = this.energie - arme2.getCoutAttaque();
+			changeEnergie(arme2.getCoutAttaque());
+			//this.energie = this.energie - arme2.getCoutAttaque();
 		} else if (id_arme == a3) {
-			this.energie = this.energie - arme3.getCoutAttaque();
-		}
+			//this.energie = this.energie - arme3.getCoutAttaque();
+			changeEnergie(arme3.getCoutAttaque());
+		} 
+		
 	}
 
 	public void defense(int id_arme, int n) {
+		changeEnergie(n);
 		if (id_arme == a1) {
-			if( arme1.getCotAttaque()- n >= 0 ){
+			if( arme1.getCoutAttaque()- n > 0 ){
 				this.vie = this.vie - (arme1.getCoutAttaque() - n);
 			}
 		} else if (id_arme == a2) {
-			if( arme2.getCotAttaque()- n >= 0 ){
+			if( arme2.getCoutAttaque()- n > 0 ){
 				this.vie = this.vie - (arme2.getCoutAttaque() - n);
 			}
 		} else if (id_arme == a3) {
-			if( arme3.getCotAttaque()- n >= 0 ){
+			if( arme3.getCoutAttaque()- n > 0 ){
 				this.vie = this.vie - (arme3.getCoutAttaque() - n);
 			}
 		}
 	}
 	
-	// Verifie que le joueur a suffisament d'energie pour se defendre
+	public void changeEnergie(int n) {
+		if (!EnergieSuffisante(n)) {
+			this.vie = this.vie - 10;
+			this.energie = this.energie + 100 -n ;
+		} else { 
+			this.energie = this.energie -n;
+		}
+	}
+	
 	public boolean EnergieSuffisante(int n) {
 		boolean b = true;
 		if( this.energie < n) {
@@ -101,8 +114,7 @@ public class Cowboy {
 		return b;
 	}
 	
-		
-	
+
 	public boolean codeArme(String code_entre, String code_arme) {
 		return (code_entre.equals(code_arme));
 	}
