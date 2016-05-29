@@ -98,7 +98,7 @@ public class Cowboy {
 	}
 	
 	public void changeEnergie(int n) {
-		if (!EnergieSuffisante(n)) {
+		if (!energieSuffisante(n)) {
 			this.vie = this.vie - 10;
 			this.energie = this.energie + 100 -n ;
 		} else { 
@@ -106,7 +106,7 @@ public class Cowboy {
 		}
 	}
 	
-	public boolean EnergieSuffisante(int n) {
+	public boolean energieSuffisante(int n) {
 		boolean b = true;
 		if( this.energie < n) {
 			b = false;
