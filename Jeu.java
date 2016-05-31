@@ -112,7 +112,7 @@ public class Jeu {
 		Cowboy j2 = new Cowboy(nom2, armeJoueur2[0], armeJoueur2[1], armeJoueur2[2]);
 
 		System.out.println();
-		System.out.println("                              <<<LA BATAILLE DU SIECLE>>>");
+		System.out.println("                              <<<LE DUEL DU SIECLE>>>");
 		System.out.print(j1);
 		System.out.print("    <----CONTRE---->    ");
 		System.out.println(j2);
@@ -125,10 +125,10 @@ public class Jeu {
 			String s1 = "";
 			do {
 				// System.out.println(nom1 + ", ecrivez le code de l'arme que
-				// vous voulez utiliser (le code ne sera pas afficher) : ");
+				// vous voulez utiliser (le code ne sera pas affiche) : ");
 				// s1 = clavier.nextLine();
 				s1 = new String(console.readPassword(nom1
-						+ ", ecrivez le code de l'arme que vous voulez utiliser (le code ne sera pas afficher) : "));
+						+ ", ecrivez le code de l'arme que vous voulez utiliser (le code ne sera pas affiche) : "));
 				System.out.println("Votre code a ete enregistre.");
 			} while (!(s1.equals(combJoueur1[0]) || s1.equals(combJoueur1[1]) || s1.equals(combJoueur1[2])));
 
@@ -148,6 +148,7 @@ public class Jeu {
 			// Le joueur 2 attaque, le joueur 1 se defend
 			String s2 = "";
 			do {
+
 				s2 = new String(console.readPassword(nom2
 						+ ", ecrivez le code de l'arme que vous voulez utiliser (le code ne sera pas afficher) : "));
 				System.out.println("Votre code a ete enregistre. ");
@@ -169,6 +170,5 @@ public class Jeu {
 		} while (!j1.estMort() && !j2.estMort());
 
 		System.out.println("Le jeu e fini.");
-
 	}
 }
