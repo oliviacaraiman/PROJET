@@ -153,20 +153,24 @@ public class Cowboy {
 		return m;
 	}
 	
-	public void afficheVie(){
+	public String afficheVie(){
         
         	int n = (int)( this.getVie() / 2);
+        	String res = " ";
         	for( int i = 1; i <= n; i++){
-            	System.out.print( "*" );
+            		res = res + "*";
         	}
+        	return res;
     	}
     
-    	public void afficheEnergie(){
+    	public String afficheEnergie(){
         
         	int n = (int)( this.getEnergie() / 2);
+        	String res = " ";
         	for( int i = 1; i <= n; i++){
-            	System.out.print( "!" );
+           		res = res + "!";
         	}
-    	}
+        	return res;
+	}
 
 }
