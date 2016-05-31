@@ -69,51 +69,47 @@ public class Cowboy {
 	public void utiliseArme(int id_arme) {
 		if (id_arme == a1) {
 			changeEnergie(arme1.getCoutAttaque());
-			//this.energie = this.energie - arme1.getCoutAttaque();
 		} else if (id_arme == a2) {
 			changeEnergie(arme2.getCoutAttaque());
-			//this.energie = this.energie - arme2.getCoutAttaque();
 		} else if (id_arme == a3) {
-			//this.energie = this.energie - arme3.getCoutAttaque();
 			changeEnergie(arme3.getCoutAttaque());
-		} 
-		
+		}
+
 	}
 
 	public void defense(int id_arme, int n) {
 		changeEnergie(n);
 		if (id_arme == a1) {
-			if( arme1.getCoutAttaque()- n > 0 ){
+			if (arme1.getCoutAttaque() - n > 0) {
 				this.vie = this.vie - (arme1.getCoutAttaque() - n);
 			}
 		} else if (id_arme == a2) {
-			if( arme2.getCoutAttaque()- n > 0 ){
+			if (arme2.getCoutAttaque() - n > 0) {
 				this.vie = this.vie - (arme2.getCoutAttaque() - n);
 			}
 		} else if (id_arme == a3) {
-			if( arme3.getCoutAttaque()- n > 0 ){
+			if (arme3.getCoutAttaque() - n > 0) {
 				this.vie = this.vie - (arme3.getCoutAttaque() - n);
 			}
 		}
 	}
-	
+
 	public void changeEnergie(int n) {
 		if (!energieSuffisante(n)) {
 			this.vie = this.vie - 10;
-			this.energie = this.energie + 100 -n ;
-		} else { 
-			this.energie = this.energie -n;
+			this.energie = this.energie + 100 - n;
+		} else {
+			this.energie = this.energie - n;
 		}
 	}
-	
+
 	public boolean energieSuffisante(int n) {
 		boolean b = true;
-		if( this.energie < n) {
+		if (this.energie < n) {
 			b = false;
 		}
 		return b;
 	}
-	
 
 	public boolean codeArme(String code_entre, String code_arme) {
 		return (code_entre.equals(code_arme));
@@ -126,7 +122,27 @@ public class Cowboy {
 			} else {
 				defense(id_arme, nb_defense);
 			}
-		} 
+		}
+	}
+	
+	public void bonus(){
+		double bon = Math.random();
+		if ((bon >= 0.5)&&(bon < 0.7)){
+			System.out.println("Vous avez gagne une banane! Ca vous donne 10 points d'energie");
+			this.energie = this.energie + 10;
+		}
+		if ((bon >= 0.7)&&(bon < 0.8)){
+			System.out.println("Vous avez gagne un verre de whiskey! Ca vous donne 30 points d'energie");
+			this.energie = this.energie + 30;
+		}
+		if ((bon >= 0.8)&&(bon < 0.85)){
+			System.out.println("Vous avez gagne une patate! Ca vous donne 10 points de vie");
+			this.vie = this.vie + 10;
+		}
+		if ((bon > 0.5)&&(bon < 0.7)){
+			System.out.println("Vous avez gagne une banane! Ca vous donne 10 points d'energie");
+			this.energie = this.energie + 10;
+		}
 	}
 
 	public boolean estMort() {
@@ -138,4 +154,3 @@ public class Cowboy {
 	}
 
 }
-
