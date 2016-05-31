@@ -170,5 +170,11 @@ public class Jeu {
 		} while (!j1.estMort() && !j2.estMort());
 
 		System.out.println("Le jeu e fini.");
+		
+		if( j1.estMort() ){
+			System.out.println( nom1 + " a ete moins fort, " + nom2 + " a sauve son prestige de cowboy!" );
+		} else {
+			System.out.println( nom2 + " a ete moins fort, " + nom1 + " a sauve son prestige de cowboy!" );
+		}
 	}
 }
