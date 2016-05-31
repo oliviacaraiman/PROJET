@@ -194,7 +194,7 @@ public class Jeu {
                 	System.out.println( "Energie: " + j2.afficheEnergie() + " " + j2.getEnergie());
                 	System.out.println();
                 	
-		System.out.println("Le jeu e fini.");
+		System.out.println("Le jeu est termine...");
 		
 		if( j1.estMort() ){
 			System.out.println( nom1 + " a ete moins fort, " + nom2 + " a sauve son prestige de cowboy!" );
