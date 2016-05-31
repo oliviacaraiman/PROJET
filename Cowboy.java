@@ -152,5 +152,21 @@ public class Cowboy {
 		}
 		return m;
 	}
+	
+	public void afficheVie(){
+        
+        	int n = (int)( this.getVie() / 2);
+        	for( int i = 1; i <= n; i++){
+            	System.out.print( "*" );
+        	}
+    	}
+    
+    	public void afficheEnergie(){
+        
+        	int n = (int)( this.getEnergie() / 2);
+        	for( int i = 1; i <= n; i++){
+            	System.out.print( "!" );
+        	}
+    	}
 
 }
