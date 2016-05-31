@@ -31,7 +31,7 @@ public class Arme {
         	this.coutAttaque = 40;
         }
         else if(n == 6) {
-        	this.nom = "Fusile";
+        	this.nom = "Fusil";
         	this.coutAttaque = 50;
         }
         else if (n == 7) {
