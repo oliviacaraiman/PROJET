@@ -28,6 +28,7 @@ public class Jeu {
 		System.out.println("autant que son pouvoir de frappe. Vous pourrez choisir a chaque tour la cantite d'energie que vous voulez ");
 		System.out.println("depenser pour vous defendre. Le spoints de vie que vous perderez sera la difference de la capacite de");
 		System.out.println("frappe de l'arme de votre attaquant, et votre energie de defense.");
+		System.out.println("De plus, a chaque fois que votre energie descend a 0, vous perderez 10 points de vie...");
 		System.out.println();
 		System.out.println("Bonne chance!");
 		System.out.println();
