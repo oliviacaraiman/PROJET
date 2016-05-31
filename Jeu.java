@@ -120,6 +120,16 @@ public class Jeu {
 		// Debut du jeu
 
 		do {
+            	System.out.println();
+            	System.out.println( nom1 + " : ");
+            	System.out.println( "Vie:     " + j1.afficheVie() + " " + j1.getVie());
+            	System.out.println( "Energie: " + j1.afficheEnergie() + " " + j1.getEnergie());
+            	System.out.println();
+            	System.out.println();
+            	System.out.println( nom2 + " : ");
+            	System.out.println( "Vie:     " + j2.afficheVie() + j2.getVie());
+            	System.out.println( "Energie: " + j2.afficheEnergie() + j2.getEnergie());
+            	System.out.println();
 
 			// Le joueur 1 attaque, le joueur 2 se defend
 			String s1 = "";
@@ -140,14 +150,21 @@ public class Jeu {
 				j1.decryptCodeArme(s1, combJoueur1[i], armeJoueur1[i], -1);
 				j2.decryptCodeArme(s1, combJoueur1[i], armeJoueur1[i], nb_defense_j1);
 			}
-
-			System.out.println(nom1 + "  energie: " + j1.getEnergie() + "  vie: " + j1.getVie());
-			System.out.println(nom2 + "  energie: " + j2.getEnergie() + "  vie: " + j2.getVie());
 			System.out.println();
 
 			// Le joueur 2 attaque, le joueur 1 se defend
 			String s2 = "";
 			do {
+                	System.out.println();
+                	System.out.println( nom1 + " : ");
+                	System.out.println( "Vie:     " + j1.afficheVie() + " " + j1.getVie());
+                	System.out.println( "Energie: " + j1.afficheEnergie() + " " + j1.getEnergie());
+                	System.out.println();
+                	System.out.println();
+        		System.out.println( nom2 + " : ");
+                	System.out.println( "Vie:     " + j2.afficheVie() + " " + j2.getVie());
+                	System.out.println( "Energie: " + j2.afficheEnergie() + " " + j2.getEnergie());
+                	System.out.println();
 
 				s2 = new String(console.readPassword(nom2
 						+ ", ecrivez le code de l'arme que vous voulez utiliser (le code ne sera pas afficher) : "));
@@ -162,13 +179,21 @@ public class Jeu {
 				j2.decryptCodeArme(s2, combJoueur2[i], armeJoueur2[i], -1);
 				j1.decryptCodeArme(s2, combJoueur2[i], armeJoueur2[i], nb_defense_j2);
 			}
-
-			System.out.println(nom1 + "  energie: " + j1.getEnergie() + "  vie: " + j1.getVie());
-			System.out.println(nom2 + "  energie: " + j2.getEnergie() + "  vie: " + j2.getVie());
 			System.out.println();
 
-		} while (!j1.estMort() && !j2.estMort());
-
+			} while (!j1.estMort() && !j2.estMort());
+		
+		System.out.println();
+                	System.out.println( nom1 + " : ");
+                	System.out.println( "Vie:     " + j1.afficheVie() + " " + j1.getVie());
+                	System.out.println( "Energie: " + j1.afficheEnergie() + " " + j1.getEnergie());
+                	System.out.println();
+                	System.out.println();
+        		System.out.println( nom2 + " : ");
+                	System.out.println( "Vie:     " + j2.afficheVie() + " " + j2.getVie());
+                	System.out.println( "Energie: " + j2.afficheEnergie() + " " + j2.getEnergie());
+                	System.out.println();
+                	
 		System.out.println("Le jeu e fini.");
 		
 		if( j1.estMort() ){
