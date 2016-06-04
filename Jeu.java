@@ -12,7 +12,7 @@ public class Jeu {
 										// Joueur 2
 		java.util.Scanner clavier = new java.util.Scanner(System.in);
 
-		System.out.println("Once upon a time in the Far West...");
+	/*	System.out.println("Once upon a time in the Far West...");
 		System.out.println("- Je ne m'attendais pas a te revoir ici... ");
 		System.out.println("- Après tant de temps...");
 		System.out.println("- Qu'est ce que tu veux? ");
@@ -21,23 +21,22 @@ public class Jeu {
 		System.out.println("- Je suis venu pour prendre ma vengeance! Je veux un duel!!");
 		System.out.println("- Comme tu veux, cowboy, cette ville est trop petite pour nous deux... ");
 		System.out.println();
-		System.out.println("Vous allez participer a un duel entre cowboys. Nous vous proposons sept armes, dont vous allez ");
+		System.out.println(
+				"Vous allez participer a un duel entre cowboys. Nous vous proposons sept armes, dont vous allez ");
 		System.out.println("choisir trois pour les utiliser durant le duel.");
-		System.out.println("ATTAQUE:");
-		System.out.println("Chaque arme a sa capacite de frappe, mais prenez garde, les utiliser va vous couter de l'energie,  ");
-		System.out.println("autant que leur capacite de frappe.");
-		System.out.println();
-		System.out.println("DEFENSE:");
-		System.out.println("Vous pourrez choisir a chaque tour la cantite d'energie que vous voulez ");
-		System.out.println("depenser pour vous defendre. Les points de vie que vous perderez sera la difference de la capacite de");
+		System.out.println(
+				"Chaque arme a sa capacite de frappe, mais prenez garde, les utiliser va vous couter de l'energie,  ");
+		System.out.println(
+				"autant que son pouvoir de frappe. Vous pourrez choisir a chaque tour la cantite d'energie que vous voulez ");
+		System.out.println(
+				"depenser pour vous defendre. Le spoints de vie que vous perderez sera la difference de la capacite de");
 		System.out.println("frappe de l'arme de votre attaquant, et votre energie de defense.");
 		System.out.println("De plus, a chaque fois que votre energie descend a 0, vous perderez 10 points de vie...");
-		System.out.println();
 		System.out.println();
 		System.out.println("Bonne chance!");
 		System.out.println();
 		System.out.println();
-		System.out.println();
+		System.out.println();*/
 
 		// Creation des armes
 		Arme a1 = new Arme(1);
@@ -80,7 +79,7 @@ public class Jeu {
 		// Touches pour le premier joueur
 		String[] combJoueur1 = new String[3];
 		for (int i = 0; i < 3; i++) {
-			System.out.println(nom1 + ", ecrivez la combinaison de touches pour votre " + (i + 1) + " arme");
+			System.out.print(nom1 + ", ecrivez la combinaison de touches pour votre " + (i + 1) + " arme: ");
 			combJoueur1[i] = clavier.nextLine();
 		}
 
@@ -105,7 +104,7 @@ public class Jeu {
 		// Touches pour le 2 joueur
 		String[] combJoueur2 = new String[3];
 		for (int i = 0; i < 3; i++) {
-			System.out.println(nom2 + ", ecrivez la combinaison de touches pour votre " + (i + 1) + " arme");
+			System.out.print(nom2 + ", ecrivez la combinaison de touches pour votre " + (i + 1) + " arme: ");
 			combJoueur2[i] = clavier.nextLine();
 		}
 
@@ -123,16 +122,15 @@ public class Jeu {
 
 		do {
 			System.out.println();
-            		System.out.println( nom1 + " : ");
-        		System.out.println( "Vie:     " + j1.afficheVie() + " " + j1.getVie());
-            		System.out.println( "Energie: " + j1.afficheEnergie() + " " + j1.getEnergie());
-            		System.out.println();
-            		System.out.println();
-            		System.out.println( nom2 + " : ");
-            		System.out.println( "Vie:     " + j2.afficheVie() + j2.getVie());
-            		System.out.println( "Energie: " + j2.afficheEnergie() + j2.getEnergie());
-            		System.out.println();
-
+			System.out.println(nom1 + " : ");
+			System.out.println("Vie:     " + j1.afficheVie() + " " + j1.getVie());
+			System.out.println("Energie: " + j1.afficheEnergie() + " " + j1.getEnergie());
+			System.out.println();
+			System.out.println();
+			System.out.println(nom2 + " : ");
+			System.out.println("Vie:     " + j2.afficheVie() + j2.getVie());
+			System.out.println("Energie: " + j2.afficheEnergie() + j2.getEnergie());
+			System.out.println();
 
 			// Le joueur 1 attaque, le joueur 2 se defend
 			String s1 = "";
@@ -142,75 +140,58 @@ public class Jeu {
 				System.out.println("Votre code a ete enregistre.");
 			} while (!(s1.equals(combJoueur1[0]) || s1.equals(combJoueur1[1]) || s1.equals(combJoueur1[2])));
 
-			System.out.println(nom2 + ", nb points pour se defendre:");
+			System.out.print(nom2 + ", nb points pour se defendre:");
 			String str_j1 = clavier.nextLine();
 			int nb_defense_j1 = Integer.parseInt(str_j1);
 
 			for (int i = 0; i < 3; i++) {
 				j1.decryptCodeArme(s1, combJoueur1[i], armeJoueur1[i], -1, j1);
-				j2.decryptCodeArme(s1, combJoueur1[i], armeJoueur1[i], nb_defense_j1,j1);
+				j2.decryptCodeArme(s1, combJoueur1[i], armeJoueur1[i], nb_defense_j1, j1);
 			}
 			if (!j1.estMort()) {
 				j1.bonus();
-			} 
+			}
 
-			
 			if (j1.estMort() || j2.estMort()) {
 				break;
 			}
 
 			// Le joueur 2 attaque, le joueur 1 se defend
+			System.out.println();
+			System.out.println(nom1 + " : ");
+			System.out.println("Vie:     " + j1.afficheVie() + " " + j1.getVie());
+			System.out.println("Energie: " + j1.afficheEnergie() + " " + j1.getEnergie());
+			System.out.println();
+			System.out.println();
+			System.out.println(nom2 + " : ");
+			System.out.println("Vie:     " + j2.afficheVie() + " " + j2.getVie());
+			System.out.println("Energie: " + j2.afficheEnergie() + " " + j2.getEnergie());
+			System.out.println();
+			
 			String s2 = "";
 			do {
-				System.out.println();
-            			System.out.println( nom1 + " : ");
-            			System.out.println( "Vie:     " + j1.afficheVie() + " " + j1.getVie());
-            			System.out.println( "Energie: " + j1.afficheEnergie() + " " + j1.getEnergie());
-            			System.out.println();
-            			System.out.println();
-            			System.out.println( nom2 + " : ");
-            			System.out.println( "Vie:     " + j2.afficheVie() + j2.getVie());
-            			System.out.println( "Energie: " + j2.afficheEnergie() + j2.getEnergie());
-            			System.out.println();
-
-
 				s2 = new String(console.readPassword(nom2
 						+ ", ecrivez le code de l'arme que vous voulez utiliser (le code ne sera pas afficher) : "));
 				System.out.println("Votre code a ete enregistre. ");
 			} while (!(s2.equals(combJoueur2[0]) || s2.equals(combJoueur2[1]) || s2.equals(combJoueur2[2])));
 
-			System.out.println(nom1 + ", nb points pour se defendre:");
+			System.out.print(nom1 + ", nb points pour se defendre:");
 			String str_j2 = clavier.nextLine();
 			int nb_defense_j2 = Integer.parseInt(str_j2);
 
 			for (int i = 0; i < 3; i++) {
-				j2.decryptCodeArme(s2, combJoueur2[i], armeJoueur2[i], -1,j2);
-				j1.decryptCodeArme(s2, combJoueur2[i], armeJoueur2[i], nb_defense_j2,j2);
+				j2.decryptCodeArme(s2, combJoueur2[i], armeJoueur2[i], -1, j2);
+				j1.decryptCodeArme(s2, combJoueur2[i], armeJoueur2[i], nb_defense_j2, j2);
 			}
 			if (!j2.estMort()) {
 				j2.bonus();
 			}
-			System.out.println(nom1 + "  energie: " + j1.getEnergie() + "  vie: " + j1.getVie());
-			System.out.println(nom2 + "  energie: " + j2.getEnergie() + "  vie: " + j2.getVie());
-			System.out.println();
 			
 		} while (!j1.estMort() && !j2.estMort());
-		
-		System.out.println();
-            System.out.println( nom1 + " : ");
-            System.out.println( "Vie:     " + j1.afficheVie() + " " + j1.getVie());
-            System.out.println( "Energie: " + j1.afficheEnergie() + " " + j1.getEnergie());
-            System.out.println();
-            System.out.println();
-            System.out.println( nom2 + " : ");
-            System.out.println( "Vie:     " + j2.afficheVie() + j2.getVie());
-            System.out.println( "Energie: " + j2.afficheEnergie() + j2.getEnergie());
-            System.out.println();
 
+		System.out.println("Le jeu e termine.");
 
-		System.out.println("Le jeu est termine.");
-
-		if (j1.estMort()) {
+		if (j1.getVie() < j2.getVie()) {
 			System.out.println(nom1 + " a ete moins fort, " + nom2 + " a sauve son prestige de cowboy!");
 		} else {
 			System.out.println(nom2 + " a ete moins fort, " + nom1 + " a sauve son prestige de cowboy!");
