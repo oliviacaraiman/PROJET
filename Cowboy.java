@@ -66,9 +66,9 @@ public class Cowboy {
 		return res;
 	}
 	/**
-     * Méthode permettant de diminuer l'energie du joueur qui a utilise un arme pour attaquer.
+     * MÃ©thode permettant de diminuer l'energie du joueur qui a utilise un arme pour attaquer.
      * @param id_arme : le numero de l'arme
-     * La méthode modifie directement les attributs
+     * La mÃ©thode modifie directement les attributs
      */
 	public void utiliseArme(int id_arme) {
 		if (id_arme == a1) {
@@ -81,11 +81,11 @@ public class Cowboy {
 	}
 	
 	/**
-     * Méthode permettant de diminuer la vie du joueur en dependance de sa defense.
+     * MÃ©thode permettant de diminuer la vie du joueur en dependance de sa defense.
      * @param n : nombre qui change l'energie
      * @param id_arme : le numero de l'arme
      * @param j : le cowboy qui utilise son arme pour attaquer 
-     * La méthode modifie directement les attributs
+     * La mÃ©thode modifie directement les attributs
      */
 	public void defense(int id_arme, int n, Cowboy j) {
 		changeEnergie(n);
@@ -105,9 +105,9 @@ public class Cowboy {
 	}
 	
 	/**
-     * Méthode permettant de diminuer l'energie du joueur.
+     * MÃ©thode permettant de diminuer l'energie du joueur.
      * @param n : nombre qui change l'energie
-     * La méthode modifie directement les attributs
+     * La mÃ©thode modifie directement les attributs
      */
 	public void changeEnergie(int n) {
 		if (!energieSuffisante(n)) {
@@ -118,7 +118,7 @@ public class Cowboy {
 		}
 	}
 	/**
-     * Méthode permettant de verifier s'il reste suffisament d'energie pour attaquer ou se defendre
+     * MÃ©thode permettant de verifier s'il reste suffisament d'energie pour attaquer ou se defendre
      * @param n : nombre qui change l'energie
      * @return true ou false
      */
@@ -130,7 +130,7 @@ public class Cowboy {
 		return b;
 	}
 	/**
-     * Méthode permettant de verifier si le code entre correspond avec celui de l'arme
+     * MÃ©thode permettant de verifier si le code entre correspond avec celui de l'arme
      * @param code_entre : le code entre
      * @param code_arme: le code reel de l'arme
      * @return true ou false
@@ -140,14 +140,14 @@ public class Cowboy {
 	}
 	
 	/**
-     * Méthode faisant la liason entre la classe principale et cette classe;
+     * MÃ©thode faisant la liason entre la classe principale et cette classe;
      * la methode permet de voir si le joueur et dans sa poistion de defense ou d'attaque.
      * @param code_entre: le code entre par l'utlisateur chaque fois qu'il veut utilise un arme
      * @param code_arme: le code de l'arme 
      * @param id_arme: le numero de l'arme
      * @param nb_defense: nombre de points introduits par le joueur pour se defendre
      * @param j: le cowboy qui attaque
-     * La méthode modifie directement les attributs
+     * La mÃ©thode modifie directement les attributs
      */
 	public void decryptCodeArme(String code_entre, String code_arme, int id_arme, int nb_defense, Cowboy j) {
 		if (codeArme(code_entre, code_arme)) {
@@ -164,22 +164,22 @@ public class Cowboy {
 		double bon = Math.random();
 
 		if ((bon >= 0.5) && (bon < 0.7)) {
-			System.out.println(nom+ ", *****Vous avez gagne une banane! Ca vous donne 10 points d'energie******");
+			System.out.println(nom+ ", *****Vous avez gagne une cigarette au poker! Ca vous donne 10 points d'energie******");
 			changeEnergie(10);
 		} else if ((bon >= 0.7) && (bon < 0.8)) {
-			System.out.println(nom+ ", *****Vous avez gagne un verre de whiskey! Ca vous donne 30 points d'energie*****");
+			System.out.println(nom+ ", *****Vous avez ete invite a un verre de whiskey au saloon! Ca vous donne 30 points d'energie*****");
 			this.energie = this.energie + 30;
 		} else if ((bon >= 0.8) && (bon < 0.85)) {
-			System.out.println(nom+", *******Vous avez gagne une patate! Ca vous donne 10 points de vie*******");
+			System.out.println(nom+", *******On vous a apportÃ© une banane! Ca vous donne 10 points de vie*******");
 			this.vie = this.vie + 10;
 		} else if ((bon >= 0.85) && (bon < 0.9) && (this.vie > 10)) {
-			System.out.println(nom+", *****Ouuuf! Vouz avez casse le pied. Vous avez perdu 10 points de vie*****");
+			System.out.println(nom+", *****Ouuuf! Vous vous etes heurtÃ© le pied. Vous avez perdu 10 points de vie*****");
 			this.vie = this.vie - 10;
 		} else if ((bon >= 0.9) && (bon < 0.95)) {
-			System.out.println(nom+ ", ****Quel dommage! . le sherif est intervenu. Vous avez perdu 20 points d'energie !******");
-			changeEnergie(20);
+			System.out.println(nom+ ", ****Le sherif a du intervenir!!  Vous avez perdu 30 points d'energie !******");
+			changeEnergie(30);
 		} else if ((bon >= 0.95) && (bon < 1)&& (this.vie > 5)) {
-			System.out.println(nom+", *****Oh la la! Vous etes tombe malade, ca vous enleve 5 points de vie !*****");
+			System.out.println(nom+", *****Oh la la! Vous avez eu un coup de soleil... vous perdez 5 points de vie !*****");
 			this.vie = this.vie - 5;
 		}
 	}
