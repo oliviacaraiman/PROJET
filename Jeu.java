@@ -12,7 +12,7 @@ public class Jeu {
 										// Joueur 2
 		java.util.Scanner clavier = new java.util.Scanner(System.in);
 
-	/*	System.out.println("Once upon a time in the Far West...");
+		System.out.println("Once upon a time in the Far West...");
 		System.out.println("- Je ne m'attendais pas a te revoir ici... ");
 		System.out.println("- Après tant de temps...");
 		System.out.println("- Qu'est ce que tu veux? ");
@@ -36,7 +36,7 @@ public class Jeu {
 		System.out.println("Bonne chance!");
 		System.out.println();
 		System.out.println();
-		System.out.println();*/
+		System.out.println();
 
 		// Creation des armes
 		Arme a1 = new Arme(1);
@@ -63,7 +63,7 @@ public class Jeu {
 		System.out.print("Nom de Joueur 1: ");
 		String nom1 = clavier.nextLine();
 		System.out.println();
-		System.out.println(" Choisissez vos armes:");
+		System.out.println("Choisissez vos armes:");
 		int n = 0;
 		for (int i = 1; i <= 3; i++) {
 			do {
@@ -76,7 +76,7 @@ public class Jeu {
 
 		System.out.println();
 
-		// Touches pour le premier joueur
+		// Touches pour le Joueur 1
 		String[] combJoueur1 = new String[3];
 		for (int i = 0; i < 3; i++) {
 			System.out.print(nom1 + ", ecrivez la combinaison de touches pour votre " + (i + 1) + " arme: ");
@@ -89,7 +89,7 @@ public class Jeu {
 		System.out.print("Nom de Joueur 2: ");
 		String nom2 = clavier.nextLine();
 		System.out.println();
-		System.out.println(" Choisissez vos armes:");
+		System.out.println("Choisissez vos armes:");
 		for (int i = 1; i <= 3; i++) {
 			do {
 				System.out.print("Donnez un nombre de 1 a 7 pour choisir l'arme numero " + i + " pour Joueur 2 : ");
@@ -101,7 +101,7 @@ public class Jeu {
 
 		System.out.println();
 
-		// Touches pour le 2 joueur
+		// Touches pour le Joueur 2
 		String[] combJoueur2 = new String[3];
 		for (int i = 0; i < 3; i++) {
 			System.out.print(nom2 + ", ecrivez la combinaison de touches pour votre " + (i + 1) + " arme: ");
@@ -126,7 +126,6 @@ public class Jeu {
 			System.out.println("Vie:     " + j1.afficheVie() + " " + j1.getVie());
 			System.out.println("Energie: " + j1.afficheEnergie() + " " + j1.getEnergie());
 			System.out.println();
-			System.out.println();
 			System.out.println(nom2 + " : ");
 			System.out.println("Vie:     " + j2.afficheVie() + j2.getVie());
 			System.out.println("Energie: " + j2.afficheEnergie() + j2.getEnergie());
@@ -136,13 +135,15 @@ public class Jeu {
 			String s1 = "";
 			do {
 				s1 = new String(console.readPassword(nom1
-						+ ", ecrivez le code de l'arme que vous voulez utiliser (le code ne sera pas affiche) : "));
-				System.out.println("Votre code a ete enregistre.");
+						+ ", ecrivez le code de l'arme que vous voulez utiliser (le code ne sera pas affiche) : "));	
 			} while (!(s1.equals(combJoueur1[0]) || s1.equals(combJoueur1[1]) || s1.equals(combJoueur1[2])));
-
-			System.out.print(nom2 + ", nb points pour se defendre:");
+			System.out.println("Votre code a ete enregistre.");
+			System.out.println();
+			System.out.print(nom2 + ", choisissez un nombre de 0 a 70 pour vous defendre:");
+			
 			String str_j1 = clavier.nextLine();
 			int nb_defense_j1 = Integer.parseInt(str_j1);
+			System.out.println();
 
 			for (int i = 0; i < 3; i++) {
 				j1.decryptCodeArme(s1, combJoueur1[i], armeJoueur1[i], -1, j1);
@@ -172,12 +173,14 @@ public class Jeu {
 			do {
 				s2 = new String(console.readPassword(nom2
 						+ ", ecrivez le code de l'arme que vous voulez utiliser (le code ne sera pas afficher) : "));
-				System.out.println("Votre code a ete enregistre. ");
 			} while (!(s2.equals(combJoueur2[0]) || s2.equals(combJoueur2[1]) || s2.equals(combJoueur2[2])));
-
-			System.out.print(nom1 + ", nb points pour se defendre:");
+			System.out.println("Votre code a ete enregistre. ");
+			System.out.println();
+			System.out.print(nom1 + ", choisissez un nombre de 0 a 70 pour vous defendre:");
+			
 			String str_j2 = clavier.nextLine();
 			int nb_defense_j2 = Integer.parseInt(str_j2);
+			System.out.println();
 
 			for (int i = 0; i < 3; i++) {
 				j2.decryptCodeArme(s2, combJoueur2[i], armeJoueur2[i], -1, j2);
@@ -193,8 +196,10 @@ public class Jeu {
 
 		if (j1.getVie() < j2.getVie()) {
 			System.out.println(nom1 + " a ete moins fort, " + nom2 + " a sauve son prestige de cowboy!");
-		} else {
+		} else if (j1.getVie() > j2.getVie()) {
 			System.out.println(nom2 + " a ete moins fort, " + nom1 + " a sauve son prestige de cowboy!");
+		} else {
+			System.out.println("Les deux cowboys sont morts en meme temps et ils ont les memes points de vie!");
 		}
 	}
 }

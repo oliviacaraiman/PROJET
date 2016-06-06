@@ -65,6 +65,7 @@ public class Cowboy {
 
 		return res;
 	}
+	
 	/**
      * Méthode permettant de diminuer l'energie du joueur qui a utilise un arme pour attaquer.
      * @param id_arme : le numero de l'arme
@@ -117,6 +118,7 @@ public class Cowboy {
 			this.energie = this.energie - n;
 		}
 	}
+	
 	/**
      * Méthode permettant de verifier s'il reste suffisament d'energie pour attaquer ou se defendre
      * @param n : nombre qui change l'energie
@@ -129,6 +131,7 @@ public class Cowboy {
 		}
 		return b;
 	}
+	
 	/**
      * Méthode permettant de verifier si le code entre correspond avec celui de l'arme
      * @param code_entre : le code entre
@@ -159,7 +162,10 @@ public class Cowboy {
 		}
 	}
 	
-	
+	/**
+     * Méthode qui donne des bonuses aux joueurs
+     * @param bon: un nombre de 0 a 0.99
+     */
 	public void bonus() {
 		double bon = Math.random();
 
@@ -170,10 +176,10 @@ public class Cowboy {
 			System.out.println(nom+ ", *****Vous avez ete invite a un verre de whiskey au saloon! Ca vous donne 30 points d'energie*****");
 			this.energie = this.energie + 30;
 		} else if ((bon >= 0.8) && (bon < 0.85)) {
-			System.out.println(nom+", *******On vous a apporté une banane! Ca vous donne 10 points de vie*******");
+			System.out.println(nom+", *******On vous a apporte une banane! Ca vous donne 10 points de vie*******");
 			this.vie = this.vie + 10;
 		} else if ((bon >= 0.85) && (bon < 0.9) && (this.vie > 10)) {
-			System.out.println(nom+", *****Ouuuf! Vous vous etes heurté le pied. Vous avez perdu 10 points de vie*****");
+			System.out.println(nom+", *****Ouuuf! Vous vous etes heurte le pied. Vous avez perdu 10 points de vie*****");
 			this.vie = this.vie - 10;
 		} else if ((bon >= 0.9) && (bon < 0.95)) {
 			System.out.println(nom+ ", ****Le sherif a du intervenir!!  Vous avez perdu 30 points d'energie !******");
@@ -184,16 +190,22 @@ public class Cowboy {
 		}
 	}
 	
+	/**
+     * Méthode qui affiche la vie d'un joueur
+     */
 	public String afficheVie(){
         
     	int n = (int)( this.getVie() / 2);
     	String res = "";
     	for( int i = 1; i <= n; i++){
-        	res = res+ "*" ;
+        	res = res+ "#" ;
     	}
     	return res;
 	}
-
+	
+	/**
+     * Méthode qui affiche l'energie d'un joueur
+     */
 	public String afficheEnergie(){
     
     	int n = (int)( this.getEnergie() / 2);
@@ -204,7 +216,9 @@ public class Cowboy {
     	return res;
 	}
 
-
+	/**
+     * Méthode qui verifie si qqun des joueurs est mort
+     */
 	public boolean estMort() {
 		boolean m = false;
 		if (this.vie <= 0) {
