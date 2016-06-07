@@ -77,7 +77,7 @@ public class Jeu {
 		System.out.println();
 
 		// Touches pour le Joueur 1
-		String[] combJoueur1 = new String[3];
+		String[] combJoueur1 = new String[3]; //tableau contenant les touches pour les arme du premier joueur
 		for (int i = 0; i < 3; i++) {
 			System.out.print(nom1 + ", ecrivez la combinaison de touches pour votre " + (i + 1) + " arme: ");
 			combJoueur1[i] = clavier.nextLine();
@@ -102,7 +102,7 @@ public class Jeu {
 		System.out.println();
 
 		// Touches pour le Joueur 2
-		String[] combJoueur2 = new String[3];
+		String[] combJoueur2 = new String[3]; //tableau contenant les touches pour les arme du premier joueur
 		for (int i = 0; i < 3; i++) {
 			System.out.print(nom2 + ", ecrivez la combinaison de touches pour votre " + (i + 1) + " arme: ");
 			combJoueur2[i] = clavier.nextLine();
@@ -121,6 +121,7 @@ public class Jeu {
 		// Debut du jeu
 
 		do {
+			//affichage des barres de vie et energie	
 			System.out.println();
 			System.out.println(nom1 + " : ");
 			System.out.println("Vie:     " + j1.afficheVie() + " " + j1.getVie());
@@ -149,6 +150,8 @@ public class Jeu {
 				j1.decryptCodeArme(s1, combJoueur1[i], armeJoueur1[i], -1, j1);
 				j2.decryptCodeArme(s1, combJoueur1[i], armeJoueur1[i], nb_defense_j1, j1);
 			}
+			
+			// verifie si le joueur n'est pas mort pour lui offrir la possibilite d'avoir un bonus
 			if (!j1.estMort()) {
 				j1.bonus();
 			}
@@ -186,6 +189,8 @@ public class Jeu {
 				j2.decryptCodeArme(s2, combJoueur2[i], armeJoueur2[i], -1, j2);
 				j1.decryptCodeArme(s2, combJoueur2[i], armeJoueur2[i], nb_defense_j2, j2);
 			}
+			
+			// verifie si le joueur n'est pas mort pour lui offrir la possibilite d'avoir un bonus
 			if (!j2.estMort()) {
 				j2.bonus();
 			}
