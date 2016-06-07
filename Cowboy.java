@@ -170,22 +170,22 @@ public class Cowboy {
 		double bon = Math.random();
 
 		if ((bon >= 0.5) && (bon < 0.7)) {
-			System.out.println(nom+ ", *****Vous avez gagne une cigarette au poker! Ca vous donne 10 points d'energie******");
+			System.out.println("*****" +nom+ ", Vous avez gagne une cigarette au poker! Ca vous donne 10 points d'energie******");
 			changeEnergie(10);
 		} else if ((bon >= 0.7) && (bon < 0.8)) {
-			System.out.println(nom+ ", *****Vous avez ete invite a un verre de whiskey au saloon! Ca vous donne 30 points d'energie*****");
+			System.out.println("*****" +nom+ ", Vous avez ete invite a un verre de whiskey au saloon! Ca vous donne 30 points d'energie*****");
 			this.energie = this.energie + 30;
 		} else if ((bon >= 0.8) && (bon < 0.85)) {
-			System.out.println(nom+", *******On vous a apporte une banane! Ca vous donne 10 points de vie*******");
+			System.out.println("*****" +nom+", On vous a apporte une banane! Ca vous donne 10 points de vie*******");
 			this.vie = this.vie + 10;
 		} else if ((bon >= 0.85) && (bon < 0.9) && (this.vie > 10)) {
-			System.out.println(nom+", *****Ouuuf! Vous vous etes heurte le pied. Vous avez perdu 10 points de vie*****");
+			System.out.println("*****" +nom+",Ouuuf! Vous vous etes heurte le pied. Vous avez perdu 10 points de vie*****");
 			this.vie = this.vie - 10;
 		} else if ((bon >= 0.9) && (bon < 0.95)) {
-			System.out.println(nom+ ", ****Le sherif a du intervenir!!  Vous avez perdu 30 points d'energie !******");
+			System.out.println("*****" +nom+ ", Le sherif a du intervenir!!  Vous avez perdu 30 points d'energie !******");
 			changeEnergie(30);
 		} else if ((bon >= 0.95) && (bon < 1)&& (this.vie > 5)) {
-			System.out.println(nom+", *****Oh la la! Vous avez eu un coup de soleil... vous perdez 5 points de vie !*****");
+			System.out.println("*****" +nom+", Oh la la! Vous avez eu un coup de soleil... vous perdez 5 points de vie !*****");
 			this.vie = this.vie - 5;
 		}
 	}
